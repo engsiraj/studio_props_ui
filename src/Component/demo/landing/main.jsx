@@ -52,8 +52,8 @@ const Header = () => {
         <Column two border Padded='4' round  bg='bgc' Top='3'>
           <Row justifyContent='space-between'>
           <Section>
-           <Text smallHeading bold darktext Bottom='3' >Studio, Dashboard ui Design system.</Text>
-           <Text darkdisable Bottom='4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, corporis! Sed, quisquam. Harum, excepturi quod?</Text>
+           <Text smallHeading bold darktext Bottom='3' >React Studio Props System</Text>
+           <Text darkdisable Bottom='4'>Reactjs props system is enhanced with styled-components, a unique approach for designing and developing user interfaces with styled-components.</Text>
            <Button med default round>Get started</Button>
           </Section>
           {/* <Section width='5'>
@@ -62,7 +62,7 @@ const Header = () => {
           </Row>
         </Column>
         <Column  two border Padded='4' round bg='bgc' Top='3'>
-          <Text  Bottom='3' darktext smallHeading bold>Siraj <Button default circle>developer</Button></Text>
+          <Text  Bottom='3' darktext smallHeading bold>Siraj <Button default circle>author</Button></Text>
           <Text darkdisable Bottom='4' >  Hi, i am siraj. a Front-end engineer and designs system developer</Text>
           <Button default oval round><VscGithub size={20}/> </Button>
           <Button Start='2' default  oval round ><p><VscTwitter size={20}/></p></Button>

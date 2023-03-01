@@ -25,9 +25,9 @@ ${color}
  
 `
 const Intro = () => {
-   const here = `this.close(ok);`
+   const here = `npm install studio-props-system`
   return (
-    <Wrapper color='green'>
+    <Wrapper color='BlueGray300'>
       <Section width='8'>
               <Text  darktext largeHeading bold Bottom='4' >Introduction</Text>
               <Text darklabel>
@@ -37,7 +37,7 @@ const Intro = () => {
               <Button End='2' med round default outline>library </Button> 
               <Button Start='2' med round succes outline>components </Button>
             </Section>
-          <Section Top='6'><Code code={here} language="javascript" /></Section>
+          <Section Top='6'><Code code={here} language="js" /></Section>
           <Text darktext smallHeading Top='6' Bottom='4'> Guide and Resources</Text>
           <Section darklabel>
           <li>this is some text here </li>
