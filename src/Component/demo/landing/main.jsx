@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
-import {VscGithub,VscGlobe,VscTwitter } from "react-icons/vsc";
-import { Button,  design, component, library } from '../App'
+import { VscGithub, VscGlobe, VscTwitter } from "react-icons/vsc";
 import { typography,space,color,flexbox,layout,border } from 'studio-props-system'
+
+import { Button,  design, component, library } from '../App'
 
 /*
 todo: landing page  
