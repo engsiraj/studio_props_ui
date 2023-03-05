@@ -13,13 +13,10 @@ import { Section, Flex, Column,Row } from '../library/Util';
 
 export { GlobalStyles,Button,StyledLink, Alert, Container, Text, Section, Flex, Column,Row }
 
-
-// header
-import headerimg from '../assets/header.png';
 // landing page image
 import design from '../assets/ds1.png';
 import library from '../assets/ds2.png';
 import component from '../assets/ds3.png';
 
-export { headerimg, design, library, component }
+export {design, library, component }
 

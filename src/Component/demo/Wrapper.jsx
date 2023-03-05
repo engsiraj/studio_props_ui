@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 import { Routes, Route } from "react-router-dom";
-import { GlobalStyles,Container } from './App'
-import Sidebar from './sidebar/Sidebar'
-import Intro from './intro/main'
-import Layout from './layout/main'
-import Components from './component/main'
-import Landingpage from './landing/main'
+
+import { GlobalStyles, Container } from './App';
+import Sidebar from './sidebar/Sidebar';
+import Intro from './intro/main';
+import Layout from './layout/main';
+import Landingpage from './landing/main';
 
 /*
 todo: routeers
@@ -23,7 +23,6 @@ const Wrapper = () => {
                 <Route index element={<Landingpage />}/>
                 <Route path='intro' element={<Intro/>}/>
                 <Route path='library' element={<Layout/>}/>
-                <Route path='component' element={<Components/>}/>
            </Routes> 
         </Container>
     </>
