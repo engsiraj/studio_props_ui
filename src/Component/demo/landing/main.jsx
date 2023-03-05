@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 import {VscAccount,VscGithub,VscGlobe,VscTwitter } from "react-icons/vsc";
-import { Section, Text, Flex, Column,Button, headerimg, design, component, library,Row } from '../App'
-
+import { Section,  Column,Button,  design, component, library,Row } from '../App'
+import { typography,space,color,flexbox,layout,border } from 'studio-props-system'
 
 /*
 todo: landing page  
@@ -15,7 +15,18 @@ todo: landing page
 - components
 ---------------
 */
-
+const breakpoints = {
+  sm: '37.5rem',
+  med: '56.25rem',
+  lg: '75rem',
+  xl: '112.5rem',
+}
+const device = {
+  phone: `(max-width: ${breakpoints.sm})`,
+  tab: `(min-width: ${breakpoints.med})`,
+  laptop: `(min-width: ${breakpoints.lg})`,
+  desktop: `(min-width: ${breakpoints.xl})`,
+};
 
 const Wrapper = styled.div`
   padding-top: 5%;
@@ -23,11 +34,28 @@ const Wrapper = styled.div`
   img{
     border-radius: 0.75rem;
   }
- 
  `
- const StyledSec = styled.div`
+const StyledSec = styled.div`
   padding-top: 5%;
  `
+const Card = styled.div`
+  ${border}
+  ${space}
+  ${color}
+  ${layout}
+  @media ${device.phone} {
+    width:100%;}
+`;
+ const Text = styled.p`
+  ${typography}
+  ${space}
+  ${color}
+`;
+ const Box = styled.p`
+  ${flexbox}
+   @media ${device.phone} {
+    flex-direction: column;}
+`;
 
 const Landingpage = () => {
   return (
@@ -48,46 +76,37 @@ export default Landingpage
 const Header = () => {
   return (
       <>
-      <Row justifyContent='space-between'>
-        <Column two border Padded='4' round  bg='bgc' Top='3'>
-          <Row justifyContent='space-between'>
-          <Section>
-           <Text smallHeading bold darktext Bottom='3' >React Studio Props System</Text>
-           <Text darkdisable Bottom='4'>Reactjs props system is enhanced with styled-components, a unique approach for designing and developing user interfaces with styled-components.</Text>
+      <Box justifyContent='space-between'>
+        <Card mt='18px' corner='.75rem'  p='20px' backgroundColor='Dark400' color='Dark100' width='49%'  border='1px solid rgba(100, 100, 100, 0.1);'>
+           <Text fontSize='smHeading' fontWeight='600' pb='12px'>Studio - Props System</Text>
+           <Text pb='18px' color='Dark200'>Reactjs props system is enhanced with styled-components, a unique approach for designing and developing user interfaces with styled-components.</Text>
            <Button med default round>Get started</Button>
-          </Section>
-          {/* <Section width='5'>
-          <img src={} alt="Header Image" />
-           </Section> */}
-          </Row>
-        </Column>
-        <Column  two border Padded='4' round bg='bgc' Top='3'>
-          <Text  Bottom='3' darktext smallHeading bold>Siraj <Button default circle>author</Button></Text>
-          <Text darkdisable Bottom='4' >  Hi, i am siraj. a Front-end engineer and designs system developer</Text>
+        </Card>
+
+        <Card mt='18px' corner='.75rem' p='20px' backgroundColor='Dark400' color='Dark100' width='49%'  border='1px solid rgba(100, 100, 100, 0.1);'>
+          <Text  fontSize='smHeading' fontWeight='600' pb='12px'>Siraj <Button default circle>author</Button></Text>
+          <Text pb='18px' color='Dark200'>  Hi, i am siraj. a Front-end engineer and designs system developer</Text>
           <Button default oval round><VscGithub size={20}/> </Button>
-          <Button Start='2' default  oval round ><p><VscTwitter size={20}/></p></Button>
-          <Button Start='2' default oval round ><p><VscGlobe size={20} /></p></Button>
-        </Column>
-      </Row>
+          <Button Start='2' default  oval round ><VscTwitter size={20}/></Button>
+          <Button Start='2' default oval round ><VscGlobe size={20} /></Button>
+        </Card>
+      </Box>
        <StyledSec>
-        <Row justifyContent='space-between' >
-          <Column three border round Padded='4' bg='bgc' Top='3'>
-          <Text regular bold darktext Bottom='2'>Component Library</Text>
-            <Text darkdisable Bottom='6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt saepe suscipit harum </Text>
-            <Text darkdisable>Lorem ipsum dolor sit amet consectetur </Text>
-          </Column>
-          <Column three border round Padded='4' bg='bgc' Top='3'>
-           <Text regular bold darktext Bottom='2'>Component Library</Text>
-            <Text darkdisable Bottom='6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt saepe suscipit harum </Text>
-            <Text darkdisable>Lorem ipsum dolor sit amet consectetur </Text>
-          </Column>
-          <Column three border round Padded='4' bg='bgc' Top='3'>
-          <Text regular bold darktext Bottom='2'>Component Library</Text>
-            <Text darkdisable Bottom='6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt saepe suscipit harum </Text>
-            <Text darkdisable>Lorem ipsum dolor sit amet consectetur </Text>
-          </Column>
-        </Row>
-        </StyledSec>
+          <Box justifyContent='space-between' >
+            <CCard
+              title='v 0.1.7'
+              desc='this is card description in case'
+              bLine='this is card bLine' />
+            <CCard
+              title='this is card title'
+              desc='this is card description in case'
+              bLine='this is card bLine' />
+            <CCard
+              title='this is card title'
+              desc='this is card description in case'
+              bLine='this is card bLine' />
+          </Box>
+      </StyledSec>
      </>
   )
 }
@@ -98,26 +117,26 @@ const Design = () => {
     <>
       <Section>
           <Wrapper>
-          <Text center darktext largeHeading bold Bottom='4' >Design & Library</Text>
-           <Text center darklabel>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, modi?</Text>
-          </Wrapper>
-        <Row justifyContent='space-between' >
-          <Column three border round Padded='3' bg='bgc' Top='3'>
-          <img src={design} alt="Header Image" />
-            <Text Top='4'regular strong darktext Bottom='1'>Grid</Text>
-            <Text darkdisable>grid system props</Text>
-          </Column>
-          <Column three border round Padded='3' bg='bgc' Top='3'>
-            <img src={library} alt="Header Image" />
-          <Text Top='4' regular strong darktext Bottom='1'>Grid</Text>
-          <Text darkdisable>grid system props</Text>
-          </Column>
-          <Column three border round Padded='3' bg='bgc' Top='3'>
-            <img src={component} alt="Header Image" />
-          <Text Top='4' regular strong darktext Bottom='1'>Component Library</Text>
-          <Text darkdisable>Lorem ipsum dolor sit amet consectetur </Text>
-          </Column>
-        </Row>
+          <MainText lgText='Design & Library' smText='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, modi?'/>
+        </Wrapper>
+        
+        <Box justifyContent='space-between' >     
+          <TCard
+            img={design}
+            title='this is card title'
+            desc='this is card description in case'
+           />
+          <TCard
+            img={library}
+            title='this is card title'
+            desc='this is card description in case'
+           />
+          <TCard
+            img={component}
+            title='this is card title'
+            desc='this is card description in case'
+           />
+        </Box>
         </Section>
     </>
   )
@@ -128,28 +147,75 @@ const Comp = () => {
   return (
     <>
       <Section>
-          <Wrapper>
-          <Text center darktext largeHeading bold Bottom='4' >Props & Styles</Text>
-           <Text center darklabel>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, modi?</Text>
-          </Wrapper>
-        <Row justifyContent='space-between' >
-          <Column three border round Padded='4' Top='3' bg='dark'>
-            <Text regular bold darktext Bottom='2'>Component Library</Text>
-            <Text darkdisable Bottom='6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt saepe suscipit harum </Text>
-            <Text darkdisable>Lorem ipsum dolor sit amet consectetur </Text>
-          </Column>
-          <Column three border round Padded='4' Top='3' bg='dark'>
-          <Text regular bold darktext Bottom='2'>Component Library</Text>
-            <Text darkdisable Bottom='6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt saepe suscipit harum </Text>
-            <Text darkdisable>Lorem ipsum dolor sit amet consectetur </Text>
-          </Column>
-          <Column three border round Padded='4' Top='3' bg='dark'>
-            <Text regular bold darktext Bottom='2'>Component Library</Text>
-            <Text darkdisable Bottom='6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt saepe suscipit harum </Text>
-            <Text darkdisable>Lorem ipsum dolor sit amet consectetur </Text>
-          </Column>
-        </Row>
+        <Wrapper>
+          <MainText
+            lgText='Props & Styles'
+            smText='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, modi?' />
+        </Wrapper>
+        <Box justifyContent='space-between' >
+          <BCard
+            title='this is card title'
+            desc='this is card description in case'
+            bLine='this is card bLine' />
+          <BCard
+            title='this is card title'
+            desc='this is card description in case'
+            bLine='this is card bLine' />
+          <BCard
+            title='this is card title'
+            desc='this is card description in case'
+            bLine='this is card bLine' />
+         
+        </Box>
         </Section>
     </>
   )
 }
+
+
+const MainText = p => {
+  return (
+    <>
+      <Text textAlign='center' color='Dark50' fontSize='xlHeading' fontWeight='600' pb='18px' >{p.lgText}</Text>
+      <Text textAlign='center' color='Dark50'>{p.smText}</Text>
+    </>
+  )
+}
+
+const TCard = p => {
+  return (
+    <>
+      <Card corner='.75rem' p='12px' backgroundColor='Dark400' width='32%' mt='18px' border='1px solid rgba(100, 100, 100, 0.1);'>
+        <img src={p.img} alt="Header Image" />
+        <Text color='Dark50' pt='18px' fontSize='regualar' fontWeight='600'>{p.title}</Text>
+        <Text fontSize='text' color='Dark200'>{p.desc}</Text>
+      </Card>
+    </>
+  )
+}
+
+const CCard = p => {
+  return (
+    <>
+    <Card corner='.75rem' p='18px' backgroundColor='Dark400' width='32%' mt='18px' border='1px solid rgba(100, 100, 100, 0.1);'>
+      <Text fontSize='text' fontWeight='700' pb='6px' color='Dark100'>{p.title}</Text>
+      <Text fontSize='text'  color='Dark200' pb='20px'>{p.desc}</Text>
+      <Text fontSize='text'  color='Dark200'>{p.bLine}</Text>
+    </Card>
+    </>
+  )
+}
+
+const BCard = p => {
+  return (
+    <>
+    <Card corner='.75rem' p='18px'  backgroundColor='Dark300'  width='32%' mt='18px' border='1px solid rgba(100, 100, 100, 0.1);'>
+      <Text fontSize='regualar' fontWeight='600' pb='6px' color='Dark100'>{p.title}</Text>
+      <Text color='Dark200' pb='36px'>{p.desc}</Text>
+      <Text color='Dark200'>{p.bLine}</Text>
+    </Card>
+    </>
+  )
+}
+
+
