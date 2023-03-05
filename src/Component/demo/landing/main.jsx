@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
-import {VscAccount,VscGithub,VscGlobe,VscTwitter } from "react-icons/vsc";
-import { Section,  Column,Button,  design, component, library,Row } from '../App'
+import {VscGithub,VscGlobe,VscTwitter } from "react-icons/vsc";
+import { Button,  design, component, library } from '../App'
 import { typography,space,color,flexbox,layout,border } from 'studio-props-system'
 
 /*
@@ -13,19 +13,15 @@ todo: landing page
 - update and news
 - library 
 - components
+- cards sections
 ---------------
 */
-const breakpoints = {
-  sm: '37.5rem',
-  med: '56.25rem',
-  lg: '75rem',
-  xl: '112.5rem',
-}
+
 const device = {
-  phone: `(max-width: ${breakpoints.sm})`,
-  tab: `(min-width: ${breakpoints.med})`,
-  laptop: `(min-width: ${breakpoints.lg})`,
-  desktop: `(min-width: ${breakpoints.xl})`,
+  phone: `(max-width: 37.5rem)`,
+  tab: `(min-width: 56.25rem)`,
+  laptop: `(min-width: 75rem)`,
+  desktop: `(min-width: 112.5rem)`,
 };
 
 const Wrapper = styled.div`
@@ -46,16 +42,17 @@ const Card = styled.div`
   @media ${device.phone} {
     width:100%;}
 `;
+ const Box = styled.div`
+  ${flexbox}
+   @media ${device.phone} {
+    flex-direction: column;}
+`;
  const Text = styled.p`
   ${typography}
   ${space}
   ${color}
 `;
- const Box = styled.p`
-  ${flexbox}
-   @media ${device.phone} {
-    flex-direction: column;}
-`;
+
 
 const Landingpage = () => {
   return (
@@ -91,6 +88,7 @@ const Header = () => {
           <Button Start='2' default oval round ><VscGlobe size={20} /></Button>
         </Card>
       </Box>
+
        <StyledSec>
           <Box justifyContent='space-between' >
             <CCard
@@ -115,7 +113,6 @@ const Design = () => {
  
   return (
     <>
-      <Section>
           <Wrapper>
           <MainText lgText='Design & Library' smText='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, modi?'/>
         </Wrapper>
@@ -137,7 +134,6 @@ const Design = () => {
             desc='this is card description in case'
            />
         </Box>
-        </Section>
     </>
   )
 }
@@ -146,7 +142,6 @@ const Comp = () => {
  
   return (
     <>
-      <Section>
         <Wrapper>
           <MainText
             lgText='Props & Styles'
@@ -165,12 +160,13 @@ const Comp = () => {
             title='this is card title'
             desc='this is card description in case'
             bLine='this is card bLine' />
-         
         </Box>
-        </Section>
     </>
   )
 }
+
+
+
 
 
 const MainText = p => {
