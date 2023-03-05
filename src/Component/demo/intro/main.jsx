@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { typography, space, color, layout } from 'studio-props-system';
+
 import { Button } from '../App';
 import Code from './Code';
-import { typography, space, color, flexbox, layout, border } from 'studio-props-system';
+
 /*
 todo: Introduction page 
 ------------
@@ -49,7 +51,7 @@ const Intro = () => {
       <Section width='70%' color='Dark100'>
               <Text fontSize='lgHeading' fontWeight='600'  pb='0.5rem' >Introduction</Text>
               <Text pb='1.5rem' color='Dark200'>
-               How to get best out the Dashboard ui design system? well that's a good point to start. but its really based on tech stack using for your design(always keep it simple) and what you goona build? using design system for your large projects may release your pain same time if your project is small it may cause effect on loading speed of website! choose wisely
+               How to get best out the Dashboard ui design system? well that's a good point to start. but its really based on tech stack using for your design(always keep it simple) and what you gonna build? using design system for your large projects may release your pain same time if your project is small it may cause effect on loading speed of website! choose wisely
               </Text>
             <Section>
               <Button End='2' med round default >library </Button> 
