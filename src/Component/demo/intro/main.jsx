@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Section, Button, Text} from '../App'
-import Code from './Code'
-import { color } from 'studio-props-system'
+import React from 'react';
+import styled from 'styled-components';
+import { Button } from '../App';
+import Code from './Code';
+import { typography, space, color, flexbox, layout, border } from 'studio-props-system';
 /*
 todo: Introduction page 
 ------------
@@ -13,33 +13,51 @@ todo: Introduction page
 - features
 - creator
 ------------
+space 
+"0.25rem", "0.5rem", "0.75rem", "1.25rem", "1.5rem", "2rem"
 */
-
+const device = {
+  phone: `(max-width: 37.5rem)`,
+  tab: `(min-width: 56.25rem)`,
+  laptop: `(min-width: 75rem)`,
+  desktop: `(min-width: 112.5rem)`,
+};
 const Wrapper = styled.div`
-${color}
   padding-top: 5%;
   padding-bottom: 5%;
   li{
     padding:1px 0;
   }
- 
 `
+const Section = styled.div`
+  ${layout}
+  ${color}
+  ${space}
+  @media ${device.phone} {
+    width:100%;}
+`;
+
+const Text = styled.p`
+  ${typography}
+  ${space}
+  ${color}
+`;
+const Install=`npm install studio-props-system`
 const Intro = () => {
-   const here = `npm install studio-props-system`
   return (
-    <Wrapper color='BlueGray300'>
-      <Section width='8'>
-              <Text  darktext largeHeading bold Bottom='4' >Introduction</Text>
-              <Text darklabel>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis expedita distinctio id blanditiis doloribus vero cumque alias explicabo sed esse, quibusdam voluptas sequi iusto quisquam officia deleniti quo repudiandae? Facere!
+    <Wrapper >
+      <Section width='70%' color='Dark100'>
+              <Text fontSize='lgHeading' fontWeight='600'  pb='0.5rem' >Introduction</Text>
+              <Text pb='1.5rem' color='Dark200'>
+               How to get best out the Dashboard ui design system? well that's a good point to start. but its really based on tech stack using for your design(always keep it simple) and what you goona build? using design system for your large projects may release your pain same time if your project is small it may cause effect on loading speed of website! choose wisely
               </Text>
-            <Section  Top='6'>
-              <Button End='2' med round default outline>library </Button> 
-              <Button Start='2' med round succes outline>components </Button>
+            <Section>
+              <Button End='2' med round default >library </Button> 
+              <Button Start='2' med round danger >props </Button>
             </Section>
-          <Section Top='6'><Code code={here} language="js" /></Section>
-          <Text darktext smallHeading Top='6' Bottom='4'> Guide and Resources</Text>
-          <Section darklabel>
+          <Section py='1.5rem'><Code code={Install} language="js" /></Section>
+          <Text fontSize='smHeading' fontWeight='500' pb='0.75rem'> Guide and Resources</Text>
+          <Section color='Dark200'>
           <li>this is some text here </li>
           <li>this is some text here </li>
           <li>this is some text here </li>
@@ -47,8 +65,8 @@ const Intro = () => {
           <li>this is some text here </li>
           <li>this is some text here </li>
           </Section>
-        <Text darktext smallHeading strong Top='6' Bottom='4'>Features ✨</Text>
-          <Section darklabel>
+        <Text fontSize='smHeading' fontWeight='500' pt='0.75rem' pb='0.75rem'>Features ✨</Text>
+          <Section color='Dark200'>
           <li>this is some text here </li>
           <li>this is some text here </li>
           <li>this is some text here </li>
@@ -56,7 +74,7 @@ const Intro = () => {
           <li>this is some text here </li>
           <li>this is some text here </li>
           </Section>
-        <Text darktext smallHeading strong Top='6' >Who Created? ✨</Text>
+        <Text fontSize='smHeading' fontWeight='500' pt='0.75rem' pb='0.75rem'>Who Created? ✨</Text>
        </Section>
     </Wrapper>
   )
