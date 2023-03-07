@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import { typography, space, color, layout } from 'studio-props-system';
 
 import { Button } from '../App';
-import Code from './Code';
+import Code from '../Code';
+import {install, usage} from './data'
+
 
 /*
 todo: Introduction page 
@@ -28,7 +30,7 @@ const Wrapper = styled.div`
   padding-top: 5%;
   padding-bottom: 5%;
   li{
-    padding:1px 0;
+    padding:2px 0;
   }
 `
 const Section = styled.div`
@@ -38,49 +40,61 @@ const Section = styled.div`
   @media ${device.phone} {
     width:100%;}
 `;
-
 const Text = styled.p`
   ${typography}
   ${space}
   ${color}
+`
+const Link = styled.a`
+  ${color}
+  cursor: pointer;
+  text-decoration: none;
+  :hover{
+    padding-bottom: 1px;
+    border-bottom: 2px solid gray;
+    color: gray;
+  }
 `;
-const Install=`npm install studio-props-system`
+
 const Intro = () => {
   return (
-    <Wrapper >
+    <>
+     <Wrapper >
       <Section width='70%' color='Dark100'>
-              <Text fontSize='lgHeading' fontWeight='600'  pb='0.5rem' >Introduction</Text>
-              <Text pb='1.5rem' color='Dark200'>
+              <Text fontSize='lgHeading'  fontWeight='600' pb='18px' >Introduction</Text>
+              <Text pb='1.5rem' color='Gray500'>
                How to get best out the Dashboard ui design system? well that's a good point to start. but its really based on tech stack using for your design(always keep it simple) and what you gonna build? using design system for your large projects may release your pain same time if your project is small it may cause effect on loading speed of website! choose wisely
               </Text>
             <Section>
-              <Button End='2' med round default >library </Button> 
-              <Button Start='2' med round danger >props </Button>
+          <Button End='1' med round primary >Library </Button>
+          <Button Start='1' med round default >Github</Button> 
+        </Section>
+          <Text fontSize='smHeading' fontWeight='500' pb='6px' pt='36px'>Version 📄</Text>
+            <Section color='Gray500'  pt='6px' pb='12px' >
+              <li>stable <Text code>0.1.7</Text>.</li>
+              <li>Modren browsers support.</li>
             </Section>
-          <Section py='1.5rem'><Code code={Install} language="js" /></Section>
-          <Text fontSize='smHeading' fontWeight='500' pb='0.75rem'> Guide and Resources</Text>
-          <Section color='Dark200'>
-          <li>this is some text here </li>
-          <li>this is some text here </li>
-          <li>this is some text here </li>
-          <li>this is some text here </li>
-          <li>this is some text here </li>
-          <li>this is some text here </li>
-          </Section>
-        <Text fontSize='smHeading' fontWeight='500' pt='0.75rem' pb='0.75rem'>Features ✨</Text>
-          <Section color='Dark200'>
-          <li>this is some text here </li>
-          <li>this is some text here </li>
-          <li>this is some text here </li>
-          <li>this is some text here </li>
-          <li>this is some text here </li>
-          <li>this is some text here </li>
-          </Section>
-        <Text fontSize='smHeading' fontWeight='500' pt='0.75rem' pb='0.75rem'>Who Created? ✨</Text>
+        <Text fontSize='text' color='Gray500'>update of latest versions availeble on github repo linked in navigation</Text>
+          <Text fontSize='smHeading' fontWeight='500' pb='6px' pt='18px'>Features ✨</Text>
+          <Section color='Gray500' py='12px'>
+          <li>🌈 small file size (light weight) </li>
+          <li>🎊 pre-defined and not defined rule sets</li>
+          <li>✅ specified css objects</li>
+          <li>👨‍💻 well commented and manageable code</li>
+          <li>💅 advanced styled-components</li>
+        </Section>
+         <Text fontSize='smHeading' fontWeight='500' pb='6px' pt='18px'> Guide and resource ✍</Text>
+            <Text fontSize='regualar' py='12px'> install using npm</Text>
+            <Text fontSize='text' color='Gray500'> install using effective javascript tooling for easier developement after installing </Text>
+           <Section py='18px'><Code code={install} lang='bash' /></Section>
+        <Text fontSize='smHeading' fontWeight='500'>Usage 👩‍💻</Text>
+        <Section py='18px'><Code code={usage} lang='jsx' /></Section>
+        <Text fontSize='smHeading' fontWeight='500' pt='0.75rem' pb='0.75rem'>Who Created? 🎓</Text>
+        <Text fontSize='regualar' pb='.5rem'>Hi, I am <Link color='Dark100' href=''>Siraj</Link>.</Text>
+        <Text fontSize='text' color='Gray500'></Text>
        </Section>
-    </Wrapper>
+      </Wrapper>
+    </>
   )
 }
 export default Intro
-
-// How to get best out the Dashboard ui design system? well that's a good point to start. but its really based on tech stack using for your design(always keep it simple) and what you goona build? using design system for your large projects may release your pain same time if your project is small it may cause effect on loading speed of website! choose wisely
