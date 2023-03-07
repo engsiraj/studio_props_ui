@@ -53,19 +53,21 @@ const Card = styled.div`
   ${space}
   ${color}
 `;
-
+const TextStyle = styled(Text)`
+  position: fixed;
+`
 
 const Landingpage = () => {
   return (
     <>
-     <>
+        <TextStyle py='6px' px='6px' backgroundColor='Dark500' fontSize='text' fontWeight='600' color='Yellow200'>🚧 website under developement errors expected</TextStyle>
         <Wrapper>
           <Header />
           <Design />
           <Comp/>
         </Wrapper>
     </>
-    </>
+
   )
 }
 
@@ -93,17 +95,17 @@ const Header = () => {
        <StyledSec>
           <Box justifyContent='space-between' >
             <CCard
-              title='v 0.1.7'
-              desc='this is card description in case'
-              bLine='this is card bLine' />
+              title='Studio props system 0.1.7 is avaible now!'
+              desc='fully functional props and stable in design system views.'
+              bLine='updated on 06-03-23' />
             <CCard
-              title='this is card title'
-              desc='this is card description in case'
-              bLine='this is card bLine' />
+              title='props system: why to use? '
+              desc='better way of using styled-components providing value based props.'
+            bLine='published 20-02-23' />
             <CCard
-              title='this is card title'
-              desc='this is card description in case'
-              bLine='this is card bLine' />
+              title='is props system is complete design system?'
+              desc='props system provide solution for styled props can be build one using the system.'
+              bLine='~ author' />
           </Box>
       </StyledSec>
      </>
@@ -115,24 +117,26 @@ const Design = () => {
   return (
     <>
           <Wrapper>
-          <MainText lgText='Design & Library' smText='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, modi?'/>
+        <MainText
+          lgText='Studio v 0.1.7'
+          smText='studio props is props system for react styled-components.' />
         </Wrapper>
         
         <Box justifyContent='space-between' >     
           <TCard
             img={design}
-            title='this is card title'
-            desc='this is card description in case'
+            title='Design language'
+            desc='react js / styled-components and css3.'
            />
           <TCard
             img={library}
-            title='this is card title'
-            desc='this is card description in case'
+            title='Props library'
+            desc='covers styled-components with props.'
            />
           <TCard
             img={component}
-            title='this is card title'
-            desc='this is card description in case'
+            title='Design guide'
+            desc='install using npm and follow friendly guide.'
            />
         </Box>
     </>
@@ -145,22 +149,19 @@ const Comp = () => {
     <>
         <Wrapper>
           <MainText
-            lgText='Props & Styles'
-            smText='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, modi?' />
+            lgText='Props System'
+            smText='props ways of using styled-components to combine react and css' />
         </Wrapper>
         <Box justifyContent='space-between' >
           <BCard
-            title='this is card title'
-            desc='this is card description in case'
-            bLine='this is card bLine' />
+            title='color'
+            desc='this is card description in case'/>
           <BCard
-            title='this is card title'
-            desc='this is card description in case'
-            bLine='this is card bLine' />
+            title='layout'
+            desc='this is card description in case'/>
           <BCard
-            title='this is card title'
-            desc='this is card description in case'
-            bLine='this is card bLine' />
+            title='space'
+            desc='this is card description in case'/>
         </Box>
     </>
   )
@@ -184,7 +185,7 @@ const TCard = p => {
     <>
       <Card corner='.75rem' p='12px' backgroundColor='Dark400' width='32%' mt='18px' border='1px solid rgba(100, 100, 100, 0.1);'>
         <img src={p.img} alt="Header Image" />
-        <Text color='Dark50' pt='18px' fontSize='regualar' fontWeight='600'>{p.title}</Text>
+        <Text color='Dark50' pt='8px' pb='4px' fontSize='regualar' fontWeight='600'>{p.title}</Text>
         <Text fontSize='text' color='Dark200'>{p.desc}</Text>
       </Card>
     </>
@@ -197,7 +198,7 @@ const CCard = p => {
     <Card corner='.75rem' p='18px' backgroundColor='Dark400' width='32%' mt='18px' border='1px solid rgba(100, 100, 100, 0.1);'>
       <Text fontSize='text' fontWeight='700' pb='6px' color='Dark100'>{p.title}</Text>
       <Text fontSize='text'  color='Dark200' pb='20px'>{p.desc}</Text>
-      <Text fontSize='text'  color='Dark200'>{p.bLine}</Text>
+      <Text fontSize='text'  color='Dark100'>{p.bLine}</Text>
     </Card>
     </>
   )
@@ -208,8 +209,7 @@ const BCard = p => {
     <>
     <Card corner='.75rem' p='18px'  backgroundColor='Dark300'  width='32%' mt='18px' border='1px solid rgba(100, 100, 100, 0.1);'>
       <Text fontSize='regualar' fontWeight='600' pb='6px' color='Dark100'>{p.title}</Text>
-      <Text color='Dark200' pb='36px'>{p.desc}</Text>
-      <Text color='Dark200'>{p.bLine}</Text>
+      <Text color='Dark200'>{p.desc}</Text>
     </Card>
     </>
   )
