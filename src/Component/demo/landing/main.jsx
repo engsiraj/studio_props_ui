@@ -116,7 +116,7 @@ const Design = () => {
  
   return (
     <>
-          <Wrapper>
+<Wrapper>
         <MainText
           lgText='Studio v 0.1.7'
           smText='studio props is props system for react styled-components.' />
