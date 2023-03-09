@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 import { typography, space, color, grid, layout, border } from 'studio-props-system';
 
 import Code from '../Code';

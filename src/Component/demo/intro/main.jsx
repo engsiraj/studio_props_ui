@@ -66,8 +66,8 @@ const Intro = () => {
                How to get best out the Dashboard ui design system? well that's a good point to start. but its really based on tech stack using for your design(always keep it simple) and what you gonna build? using design system for your large projects may release your pain same time if your project is small it may cause effect on loading speed of website! choose wisely
               </Text>
             <Section>
-          <Button End='1' med round primary >Library </Button>
-          <Button Start='1' med round default >Github</Button> 
+          <Button mr='12px' med round primary >Props</Button>
+          <Button med round default >Github</Button> 
         </Section>
           <Text fontSize='smHeading' fontWeight='500' pb='6px' pt='36px'>Version 📄</Text>
             <Section color='Gray500'  pt='6px' pb='12px' >

@@ -28,9 +28,9 @@ const device = {
 const Wrapper = styled.div`
   padding-top: 5%;
   padding-bottom: 5%;
-  img{
-    border-radius: 0.75rem;
-  }
+img{
+  border-radius: calc(.75rem - 5px);
+}
  `
 const StyledSec = styled.div`
   padding-top: 5%;
@@ -86,9 +86,9 @@ const Header = () => {
         <Card mt='18px' corner='.75rem' p='20px' backgroundColor='Dark400' color='Dark100' width='49%'  border='1px solid rgba(100, 100, 100, 0.1);'>
           <Text  fontSize='smHeading' fontWeight='600' pb='12px'>Siraj <Button default circle>author</Button></Text>
           <Text pb='18px' color='Dark200'>  Hi, i am siraj. a Front-end engineer and designs system developer</Text>
-          <Button default oval round><VscGithub size={20}/> </Button>
-          <Button Start='2' default  oval round ><VscTwitter size={20}/></Button>
-          <Button Start='2' default oval round ><VscGlobe size={20} /></Button>
+          <Button default icon round><VscGithub size={20}/> </Button>
+          <Button mx='6px' default icon round ><VscTwitter size={20}/></Button>
+          <Button  default icon round ><VscGlobe size={20} /></Button>
         </Card>
       </Box>
 
