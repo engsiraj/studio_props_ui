@@ -1,17 +1,10 @@
 /*
-todo: library imports 
-- library all files/images/components/pages etc.....
+-  files/images/components
 */
 
-import { Button, StyledLink} from '../library/Button';
-
-import Alert from "../library/Alert";
-import Container from "../library/Container";
-import Text from "../library/Text";
+import { Button} from '../library/Button';
 import GlobalStyles from '../library/GlobalStyles';
-import { Section, Flex, Column,Row } from '../library/Util';
-
-export { GlobalStyles,Button,StyledLink, Alert, Container, Text, Section, Flex, Column,Row }
+export { GlobalStyles,Button,}
 
 // landing page image
 import design from '../assets/ds1.png';
