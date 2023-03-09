@@ -91,7 +91,7 @@ const Intro = () => {
         <Section py='18px'><Code code={usage} lang='jsx' /></Section>
         <Text fontSize='smHeading' fontWeight='500' pt='0.75rem' pb='0.75rem'>Who Created? 🎓</Text>
         <Text fontSize='regualar' pb='.5rem'>Hi, I am <Link color='Dark100' href=''>Siraj</Link>.</Text>
-        <Text fontSize='text' color='Gray500'></Text>
+        <Text fontSize='text' color='Gray500'>Experienced React JS Developer with a deep understanding of the framework.  Skilled in developing complex user interfaces, integrating with back-end APIs, and optimizing performance for fast load times. Effective communicator with strong problem-solving skills, dedicated to delivering exceptional results and exceeding client expectations. Passionate about staying up-to-date with the latest trends in React and web development.</Text>
        </Section>
       </Wrapper>
     </>
