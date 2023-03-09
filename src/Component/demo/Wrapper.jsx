@@ -1,7 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Routes, Route } from "react-router-dom";
+import { typography,space,color } from 'studio-props-system';
 
-import { GlobalStyles, Container } from './App';
+import { GlobalStyles } from './App';
 import Sidebar from './sidebar/Sidebar';
 import Intro from './intro/main';
 import Layout from './layout/main';
@@ -13,12 +15,17 @@ todo: routeers
 -  route
 -  links 
 */
+const Container = styled.div`
+  ${typography}
+  ${space}
+  ${color}
+`
 const Wrapper = () => {
   return (
     <>
       <GlobalStyles />
         <Sidebar />
-        <Container dashboard bg='fgc'>
+        <Container pr='5%' pl='calc(55px + 5%)' backgroundColor='Dark00'>
            <Routes>
                 <Route index element={<Landingpage />}/>
                 <Route path='intro' element={<Intro/>}/>
