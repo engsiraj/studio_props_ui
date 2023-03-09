@@ -3,7 +3,9 @@ import styled from 'styled-components'
 import { typography, space, color, grid, layout, border } from 'studio-props-system';
 
 import Code from '../Code';
-import { spaceCode, spaceUsage, typoCode, typoUsage, flexCode, flexUsage, gridCode, gridUsage, bgCode, bgUsage, borderCode, borderUsage, shCode, shUsage, layCode, layUsage } from './data';
+import { spaceCode, spaceUsage, typoCode, typoUsage, flexCode, flexUsage, gridCode, gridUsage, bgCode, bgUsage, borderCode, borderUsage, shCode, shUsage, layCode, layUsage, colCode, colUsage } from './data';
+import  {Red,Pink,Purple,Deeppurple,Indigo,Blue,Lightblue,Cyan,Teal,Green,Lightgreen,Lime,Yellow,Amber,Orange,Deeporange,Brown,Gray,Bluegray,Dark,Bw } from './data'
+
 
 /*
 todo: Components page 
@@ -18,7 +20,7 @@ color {https://m2.material.io/design/color/the-color-system.html#tools-for-picki
 
 const device = {
   phone: `(max-width: 37.5rem)`,
-  tab: `(min-width: 56.25rem)`,
+  tab: `(max-width: 56.25rem)`,
   laptop: `(min-width: 75rem)`,
   desktop: `(min-width: 112.5rem)`,
 };
@@ -63,22 +65,26 @@ const Span = styled.span`
 
 `;
 
-export default function Layout(){
+export default function Layout() {
+
+
   return (
     <Wrapper >
-     <Card width='70%' color='Dark100'>
+      <Card width='70%' color='Dark100'>
        <Header/>
         <Box my='20px' templateColumn='repeat(auto-fill, minmax(175px, 1fr));' gridGap='.4rem'>
-          <CardSec title='Space' link='#space' desc='margin and padding' />
-          <CardSec title='Typography' link='#typo' desc='fonts and text' />
-          <CardSec title='Flexbox' link='#flex' desc='display flex' />
-          <CardSec title='Grid' link='#grid' desc='display grid' />
-          <CardSec title='Background' link='#bg' desc='' />
-          <CardSec title='Border' link='#border' desc='' />
-          <CardSec title='Shadow' link='#sh' desc='' />
-          <CardSec title='Layout' link='#lay' desc='' />
+          <CardSec title='Space' link='#space' desc='mär-jən and padɪŋ' />
+          <CardSec title='Colors' link='#colors' desc=' kuh·lr' />
+          <CardSec title='Typography' link='#typo' desc='tai·po·gruh·fee'/>
+          <CardSec title='Flexbox' link='#flex' desc='Flexible Box Layout' />
+          <CardSec title='Grid' link='#grid' desc='CSS Grid Layout ' />
+          <CardSec title='Background' link='#bg' desc='bak·grownd' />
+          <CardSec title='Border' link='#border' desc='baw·duh' />
+          <CardSec title='Shadow' link='#sh' desc='sha·dow' />
+          <CardSec title='Layout' link='#lay' desc='lay·owt' />
         </Box>
-        <Space addres='space'/>
+        <Space addres='space' />
+        <Colors addres='colors'/>
         <Type addres='typo'/>
         <Flex addres='flex'/>
         <Grid addres='grid'/>
@@ -244,3 +250,43 @@ const LayoutSec = p => {
   )
 }
   
+
+const Colors = p => {
+
+
+  return (
+    
+    <Card id={p.addres}>
+      <Text fontSize='smHeading' fontWeight='500' py='12px' color='Dark100'>Color System</Text>
+        <Card py='6px'><Code code={colCode} lang="jsx" /></Card>
+        <Text py='6px' fontSize='text' color='Gray500'>css property <Span code>color:green;</Span> rules are pre-defined and you can define in your way with css properties</Text>
+       <Text fontSize='regualar' py='6px'>Usage</Text>
+       <Card py='6px'><Code code={colUsage} lang="jsx" /></Card>
+      <Text fontSize='regualar' py='6px'>Color Pallet</Text>
+      <Box my='20px' templateColumn='repeat(auto-fit, minmax(120px, 1fr));' gridGap='.4rem'>
+        <Card>{Red()}</Card>
+        <Card>{Pink()}</Card>
+        <Card>{Blue()}</Card>
+        <Card>{Purple()}</Card>
+        <Card>{Deeppurple()}</Card>
+        <Card>{Indigo()}</Card>     
+        <Card>{Lightblue()}</Card>
+        <Card>{Cyan()}</Card>
+        <Card>{Teal()}</Card>
+        <Card>{Green()}</Card>
+        <Card>{Lightgreen()}</Card>
+        <Card>{Lime()}</Card>
+        <Card>{Yellow()}</Card>
+        <Card>{Amber()}</Card>
+        <Card>{Orange()}</Card>
+        <Card>{Deeporange()}</Card>
+        <Card>{Brown()}</Card>
+        <Card>{Gray()}</Card>
+        <Card>{Bluegray()}</Card>
+        <Card>{Dark()}</Card>
+        <Card>{Bw()}</Card>
+       </Box>
+    </Card>
+  )
+}
+
