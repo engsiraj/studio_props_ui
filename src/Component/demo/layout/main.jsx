@@ -72,7 +72,7 @@ export default function Layout() {
     <Wrapper >
       <Card width='70%'>
        <Header/>
-        <Box my='20px' templateColumn='repeat(auto-fill, minmax(260px, 1fr));' gridGap='.4rem'>
+        <Box my='20px' templateColumn='repeat(auto-fill, minmax(260px, 1fr))' gridGap='.4rem'>
           <CardSec title='Space' link='#space' desc='mär-jən and padɪŋ' />
           <CardSec title='Colors' link='#colors' desc=' kuh·lr' />
           <CardSec title='Typography' link='#typo' desc='tai·po·gruh·fee'/>
@@ -263,7 +263,7 @@ const Colors = p => {
        <Text fontSize='regualar' py='6px'>Usage</Text>
        <Card py='6px'><Code code={colUsage} lang="jsx" /></Card>
       <Text fontSize='regualar' py='6px'>Color Pallet</Text>
-      <Box my='20px' templateColumn='repeat(auto-fill, minmax(120px, 1fr));' gridGap='.4rem'>
+      <Box my='20px' templateColumn='repeat(auto-fill, minmax(120px, 1fr))' gridGap='.4rem'>
         <Card>{Red()}</Card>
         <Card>{Pink()}</Card>
         <Card>{Blue()}</Card>
