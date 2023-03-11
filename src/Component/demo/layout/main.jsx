@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { typography, space, color, grid, layout, border } from 'studio-props-system';
+import { typography, space, color, flexbox, layout, border } from 'studio-props-system';
 
 import Code from '../Code';
 import { spaceCode, spaceUsage, typoCode, typoUsage, flexCode, flexUsage, gridCode, gridUsage, bgCode, bgUsage, borderCode, borderUsage, shCode, shUsage, layCode, layUsage, colCode, colUsage } from './data';
@@ -32,9 +32,16 @@ const Wrapper = styled.div`
     padding:1px 0;
   }`
 const Box = styled.div`
-  ${grid}
+  ${flexbox}
   ${space}
 `;
+const Item = styled.div`
+  flex: 1 0 1;
+  width:200px;
+  @media ${device.phone} {
+      width:100%;}
+`;
+
 const Text = styled.p`
   ${typography}
   ${space}
@@ -72,16 +79,16 @@ export default function Layout() {
     <Wrapper >
       <Card width='70%'>
        <Header/>
-        <Box my='20px' templateColumn='repeat(auto-fill, minmax(260px, 1fr))' gridGap='.4rem'>
-          <CardSec title='Space' link='#space' desc='mär-jən and padɪŋ' />
-          <CardSec title='Colors' link='#colors' desc=' kuh·lr' />
-          <CardSec title='Typography' link='#typo' desc='tai·po·gruh·fee'/>
-          <CardSec title='Flexbox' link='#flex' desc='Flexible Box Layout' />
-          <CardSec title='Grid' link='#grid' desc='CSS Grid Layout ' />
-          <CardSec title='Background' link='#bg' desc='bak·grownd' />
-          <CardSec title='Border' link='#border' desc='baw·duh' />
-          <CardSec title='Shadow' link='#sh' desc='sha·dow' />
-          <CardSec title='Layout' link='#lay' desc='lay·owt' />
+        <Box my='20px' flexWrap='wrap' >
+          <Item><CardSec title='Space' link='#space' desc='mär-jən ' /></Item>
+           <Item><CardSec title='Colors' link='#colors' desc=' kuh·lr' /></Item>
+           <Item><CardSec title='Typography' link='#typo' desc='tai·po·gruh·fee'/></Item>
+           <Item><CardSec title='Flexbox' link='#flex' desc='Flexible Box Layout' /></Item>
+           <Item><CardSec title='Grid' link='#grid' desc='CSS Grid Layout ' /></Item>
+           <Item><CardSec title='Background' link='#bg' desc='bak·grownd' /></Item>
+           <Item><CardSec title='Border' link='#border' desc='baw·duh' /></Item>
+           <Item><CardSec title='Shadow' link='#sh' desc='sha·dow' /></Item>
+           <Item><CardSec title='Layout' link='#lay' desc='lay·owt' /></Item>
         </Box>
         <Space addres='space' />
         <Colors addres='colors'/>
@@ -111,6 +118,8 @@ const CardSec = p => {
     <>
       <Card
         corner='.75rem'
+        mt='6px'
+        mr='6px'
         p='10px'
         backgroundColor='Dark400'
         border='1px solid rgba(100, 100, 100, 0.1);'>
@@ -263,8 +272,8 @@ const Colors = p => {
        <Text fontSize='regualar' py='6px'>Usage</Text>
        <Card py='6px'><Code code={colUsage} lang="jsx" /></Card>
       <Text fontSize='regualar' py='6px'>Color Pallet</Text>
-      <Box my='20px' templateColumn='repeat(auto-fill, minmax(120px, 1fr))' gridGap='.4rem'>
-        <Card>{Red()}</Card>
+      <Box my='20px' flexWrap='wrap'>
+        {/* <Card>{Red()}</Card>
         <Card>{Pink()}</Card>
         <Card>{Blue()}</Card>
         <Card>{Purple()}</Card>
@@ -284,7 +293,7 @@ const Colors = p => {
         <Card>{Gray()}</Card>
         <Card>{Bluegray()}</Card>
         <Card>{Dark()}</Card>
-        <Card>{Bw()}</Card>
+        <Card>{Bw()}</Card> */}
        </Box>
     </Card>
   )
