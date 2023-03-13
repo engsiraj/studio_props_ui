@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components';
 import { VscGithub, VscGlobe, VscTwitter } from "react-icons/vsc";
-import { typography,space,color,flexbox,layout,border } from 'studio-props-system'
+import { typography, space, color, flexbox, layout, border } from 'studio-props-system'
 
+import Code from '../Code';
+import {colCode,colUsage,layCode,layUsage, typoCode,typoUsage } from './data';
 import { Button,  design, component, library } from '../App'
 
 /*
@@ -26,8 +28,7 @@ const device = {
 };
 
 const Wrapper = styled.div`
-  padding-top: 5%;
-  padding-bottom: 5%;
+  ${space}
 img{
   border-radius: calc(.75rem - 5px);
 }
@@ -46,7 +47,9 @@ const Card = styled.div`
  const Box = styled.div`
   ${flexbox}
    @media ${device.phone} {
-    flex-direction: column;}
+    flex-direction: column;
+     // width:100%;
+    }
 `;
  const Text = styled.p`
   ${typography}
@@ -57,14 +60,15 @@ const TextStyle = styled(Text)`
   position: fixed;
 `
 
+
 const Landingpage = () => {
   return (
     <>
-        <TextStyle py='6px' px='6px' backgroundColor='Dark500' fontSize='text' fontWeight='600' color='Yellow200'>🚧 website under developement errors expected</TextStyle>
-        <Wrapper>
-          <Header />
+        <TextStyle py='6px' px='6px' backgroundColor='Dark500' fontSize='12px' fontWeight='600' color='Yellow200'>🚧 website under developement</TextStyle>
+        <Wrapper  pt='3%' pb='3%'>
+        <Header />
           <Design />
-          <Comp/>
+        <Comp />
         </Wrapper>
     </>
 
@@ -73,22 +77,23 @@ const Landingpage = () => {
 
 export default Landingpage
 
+
 const Header = () => {
   return (
-      <>
+      <Card  color='Gray400'>
       <Box justifyContent='space-between'>
-        <Card mt='18px' corner='.75rem'  p='20px' backgroundColor='Dark400' color='Dark100' width='49%'  border='1px solid rgba(100, 100, 100, 0.1);'>
+        <Card mt='18px' corner='.75rem'  p='20px' backgroundColor='Dark400'  width='49%'  border='1px solid rgba(100, 100, 100, 0.1);'>
            <Text fontSize='smHeading' fontWeight='600' pb='12px'>Studio - Props System</Text>
-           <Text pb='18px' color='Dark200'>Reactjs props system is enhanced with styled-components, a unique approach for designing and developing user interfaces with styled-components.</Text>
-           <Button med default round>Get started</Button>
+           <Text pb='18px' color='Gray600' >Reactjs props system is enhanced with styled-components, a unique approach for designing and developing user interfaces with styled-components.</Text>
+           <Button block sm default round>Get started</Button>
         </Card>
 
-        <Card mt='18px' corner='.75rem' p='20px' backgroundColor='Dark400' color='Dark100' width='49%'  border='1px solid rgba(100, 100, 100, 0.1);'>
+        <Card mt='18px' corner='.75rem' p='20px' backgroundColor='Dark400'  width='49%'  border='1px solid rgba(100, 100, 100, 0.1);'>
           <Text  fontSize='smHeading' fontWeight='600' pb='12px'>Siraj <Button default circle>author</Button></Text>
-          <Text pb='18px' color='Dark200'>  Hi, i am siraj. a Front-end engineer and designs system developer</Text>
-          <Button default icon round><VscGithub size={20}/> </Button>
-          <Button mx='6px' default icon round ><VscTwitter size={20}/></Button>
-          <Button  default icon round ><VscGlobe size={20} /></Button>
+          <Text pb='18px' color='Gray600'>  Hi, i am siraj. a Front-end engineer and designs system developer</Text>
+          <Button default icon round><VscGithub /> </Button>
+          <Button mx='6px' default icon round ><VscTwitter/></Button>
+          <Button  default icon round ><VscGlobe /></Button>
         </Card>
       </Box>
 
@@ -108,7 +113,7 @@ const Header = () => {
               bLine='~ author' />
           </Box>
       </StyledSec>
-     </>
+     </Card>
   )
 }
 
@@ -116,7 +121,7 @@ const Design = () => {
  
   return (
     <>
-<Wrapper>
+       <Wrapper  pt='3%' pb='3%'>
         <MainText
           lgText='Studio v 0.1.7'
           smText='studio props is props system for react styled-components.' />
@@ -144,24 +149,36 @@ const Design = () => {
 }
 
 const Comp = () => {
- 
+  const colorCode = <Card>
+    <Code code={colCode} lang='jsx' />
+    <Code code={colUsage} lang='jsx' />
+  </Card>
+    const typographyCode = <Card>
+    <Code code={typoCode} lang='jsx' />
+    <Code code={typoUsage} lang='jsx' />
+  </Card>
+    const layoutCode = <Card>
+    <Code code={layCode} lang='jsx' />
+    <Code code={layUsage} lang='jsx' />
+  </Card>
+  
   return (
     <>
-        <Wrapper>
+        <Wrapper  pt='3%' pb='3%'>
           <MainText
             lgText='Props System'
             smText='props ways of using styled-components to combine react and css' />
         </Wrapper>
         <Box justifyContent='space-between' >
           <BCard
-            title='color'
-            desc='this is card description in case'/>
+            title='Color System'
+            desc={colorCode}/>
           <BCard
-            title='layout'
-            desc='this is card description in case'/>
+            title='Typography'
+           desc={typographyCode}/>
           <BCard
-            title='space'
-            desc='this is card description in case'/>
+          title='space'
+           desc={layoutCode} />
         </Box>
     </>
   )
@@ -174,8 +191,8 @@ const Comp = () => {
 const MainText = p => {
   return (
     <>
-      <Text textAlign='center' color='Dark50' fontSize='xlHeading' fontWeight='600' pb='18px' >{p.lgText}</Text>
-      <Text textAlign='center' color='Dark50'>{p.smText}</Text>
+      <Text textAlign='center'  color='Gray400' fontSize='lgHeading' fontWeight='600' pb='18px' >{p.lgText}</Text>
+      <Text textAlign='center'  color='Gray600'>{p.smText}</Text>
     </>
   )
 }
@@ -185,8 +202,8 @@ const TCard = p => {
     <>
       <Card corner='.75rem' p='12px' backgroundColor='Dark400' width='32%' mt='18px' border='1px solid rgba(100, 100, 100, 0.1);'>
         <img src={p.img} alt="Header Image" />
-        <Text color='Dark50' pt='8px' pb='4px' fontSize='regualar' fontWeight='600'>{p.title}</Text>
-        <Text fontSize='text' color='Dark200'>{p.desc}</Text>
+        <Text  color='Gray400' pt='8px' pb='4px' fontSize='regualar' fontWeight='600'>{p.title}</Text>
+        <Text fontSize='text'  color='Gray600'>{p.desc}</Text>
       </Card>
     </>
   )
@@ -196,9 +213,9 @@ const CCard = p => {
   return (
     <>
     <Card corner='.75rem' p='18px' backgroundColor='Dark400' width='32%' mt='18px' border='1px solid rgba(100, 100, 100, 0.1);'>
-      <Text fontSize='text' fontWeight='700' pb='6px' color='Dark100'>{p.title}</Text>
-      <Text fontSize='text'  color='Dark200' pb='20px'>{p.desc}</Text>
-      <Text fontSize='text'  color='Dark100'>{p.bLine}</Text>
+      <Text fontSize='text' fontWeight='700' pb='6px'  color='Gray400'>{p.title}</Text>
+      <Text fontSize='text' color='Gray600' pb='20px'>{p.desc}</Text>
+      <Text fontSize='text'>{p.bLine}</Text>
     </Card>
     </>
   )
@@ -207,9 +224,9 @@ const CCard = p => {
 const BCard = p => {
   return (
     <>
-    <Card corner='.75rem' p='18px'  backgroundColor='Dark300'  width='32%' mt='18px' border='1px solid rgba(100, 100, 100, 0.1);'>
-      <Text fontSize='regualar' fontWeight='600' pb='6px' color='Dark100'>{p.title}</Text>
-      <Text color='Dark200'>{p.desc}</Text>
+    <Card  p='18px'   width='32%' mt='18px'>
+      <Text fontSize='regualar' fontWeight='600' pb='12px'  color='Gray400'>{p.title}</Text>
+      <Text  color='Gray600'>{p.desc}</Text>
     </Card>
     </>
   )
