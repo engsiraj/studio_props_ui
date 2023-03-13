@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { typography, space, color, flexbox, layout, border } from 'studio-props-system';
+import { typography, space, color, flexbox, layout, border  } from 'studio-props-system';
 
 import Code from '../Code';
 import { spaceCode, spaceUsage, typoCode, typoUsage, flexCode, flexUsage, gridCode, gridUsage, bgCode, bgUsage, borderCode, borderUsage, shCode, shUsage, layCode, layUsage, colCode, colUsage } from './data';
@@ -67,9 +67,17 @@ const Card = styled.div`
   @media ${device.phone} {
     width:100%;}
 `;
+
 const Span = styled.span`
   ${typography}
 
+`;
+
+const Gridsys = styled.div`
+margin-top: 12px;
+display: grid;
+grid-gap: 6px;
+ grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 `;
 
 export default function Layout() {
@@ -91,14 +99,14 @@ export default function Layout() {
            <Item><CardSec title='Layout' link='#lay' desc='lay·owt' /></Item>
         </Box>
         <Space addres='space' />
-        <Colors addres='colors'/>
         <Type addres='typo'/>
         <Flex addres='flex'/>
         <Grid addres='grid'/>
         <Background addres='bg'/>
         <Border addres='border'/>
         <Shadow addres='sh'/>
-        <LayoutSec addres='lay'/>
+        <LayoutSec addres='lay' />
+         <Colors addres='colors'/>
       </Card>
     </Wrapper>
   )
@@ -272,8 +280,8 @@ const Colors = p => {
        <Text fontSize='regualar' py='6px'>Usage</Text>
        <Card py='6px'><Code code={colUsage} lang="jsx" /></Card>
       <Text fontSize='regualar' py='6px'>Color Pallet</Text>
-      <Box my='20px' flexWrap='wrap'>
-        {/* <Card>{Red()}</Card>
+      <Gridsys>
+        <Card>{Red()}</Card>
         <Card>{Pink()}</Card>
         <Card>{Blue()}</Card>
         <Card>{Purple()}</Card>
@@ -293,8 +301,8 @@ const Colors = p => {
         <Card>{Gray()}</Card>
         <Card>{Bluegray()}</Card>
         <Card>{Dark()}</Card>
-        <Card>{Bw()}</Card> */}
-       </Box>
+        <Card>{Bw()}</Card>
+      </Gridsys>
     </Card>
   )
 }
