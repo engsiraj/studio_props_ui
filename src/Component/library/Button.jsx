@@ -13,10 +13,10 @@ border-radius: ${p => {
     return 'none'
 }};
 padding: ${p => {
-    if (p.sm) return `0.25rem 0.5625rem`
-    else if (p.med) return `0.4375rem 1.125rem`
-    else if (p.lg) return `0.75rem 1.25rem`
-    else if (p.icon) return `5px 5px 0.1px 5px`
+  if (p.sm) return `6px 12px`
+    else if (p.med) return `7px 18px`
+    else if (p.lg) return `8px 24px`
+    else if (p.icon) return `4px 5px 0px 5px`
     return `none`
   }}; 
 
