@@ -4,7 +4,7 @@ import { typography, space, color, layout } from 'studio-props-system';
 
 import { Button } from '../App';
 import Code from '../Code';
-import {install, usage} from './data'
+import { install, usage } from './data';
 
 
 /*
@@ -27,8 +27,7 @@ const device = {
   desktop: `(min-width: 112.5rem)`,
 };
 const Wrapper = styled.div`
-  padding-top: 5%;
-  padding-bottom: 5%;
+  ${space}
   li{
     padding:2px 0;
   }
@@ -59,11 +58,11 @@ const Link = styled.a`
 const Intro = () => {
   return (
     <>
-     <Wrapper >
+     <Wrapper pt='3%' pb='3%'>
       <Section width='70%' color='Dark100'>
               <Text fontSize='lgHeading'  fontWeight='600' pb='18px' >Introduction</Text>
               <Text pb='1.5rem' color='Gray500'>
-               How to get best out the Dashboard ui design system? well that's a good point to start. but its really based on tech stack using for your design(always keep it simple) and what you gonna build? using design system for your large projects may release your pain same time if your project is small it may cause effect on loading speed of website! choose wisely
+               How to get best out the props ui design system? well that's a good point to start. but its really based on tech stack using for your design(always keep it simple) and what you gonna build? using design system for your large projects may release your pain same time if your project is small it may cause effect on loading speed of website sometimes!  studio props system package have less than 50kbs in size.
               </Text>
             <Section>
           <Button mr='12px' med round primary >Props</Button>
