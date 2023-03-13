@@ -24,7 +24,7 @@ const Wrapper = () => {
     <>
       <GlobalStyles />
         <Sidebar />
-        <Container pr='5%' pl='calc(55px + 5%)' backgroundColor='Dark500'>
+        <Container pr='3%' pl='calc(55px + 3%)' backgroundColor='Dark500'>
            <Routes>
                 <Route index element={<Landingpage />}/>
                 <Route path='intro' element={<Intro/>}/>
