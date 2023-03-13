@@ -26,8 +26,7 @@ const device = {
 };
 
 const Wrapper = styled.div`
-  padding-top: 5%;
-  padding-bottom: 5%;
+ ${space}
   li{
     padding:1px 0;
   }`
@@ -84,7 +83,7 @@ export default function Layout() {
 
 
   return (
-    <Wrapper >
+    <Wrapper  pt='3%' pb='3%'>
       <Card width='70%'>
        <Header/>
         <Box my='20px' flexWrap='wrap' >
@@ -116,7 +115,7 @@ const Header = () => {
   return (
     <>
       <Text fontSize='lgHeading' color='Gray400'  fontWeight='600' pb='18px' >Documentation</Text>
-        <Text  fontSize='text' color='Gray600'> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, accusamus.</Text>
+        <Text  fontSize='text' color='Gray600'>studio props system of styled-components and react js.</Text>
     </>
   )
 }
