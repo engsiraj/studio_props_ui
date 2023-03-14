@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { typography, space, color, layout } from 'studio-props-system';
 
 import { Button } from '../App';
@@ -44,15 +45,10 @@ const Text = styled.p`
   ${space}
   ${color}
 `
-const Link = styled.a`
+const StyledLink = styled(Link)`
   ${color}
   cursor: pointer;
   text-decoration: none;
-  :hover{
-    padding-bottom: 1px;
-    border-bottom: 2px solid gray;
-    color: gray;
-  }
 `;
 
 const Intro = () => {
@@ -65,8 +61,8 @@ const Intro = () => {
                How to get best out the props ui design system? well that's a good point to start. but its really based on tech stack using for your design(always keep it simple) and what you gonna build? using design system for your large projects may release your pain same time if your project is small it may cause effect on loading speed of website sometimes!  studio props system package have less than 50kbs in size.
               </Text>
             <Section>
-          <Button mr='12px' med round primary >Props</Button>
-          <Button med round default >Github</Button> 
+          <Button mr='12px' med round primary ><StyledLink color='White' to="/library">Props</StyledLink></Button>
+          <Button med round default ><StyledLink color='White' to="https://github.com/engsiraj/studio">Github</StyledLink></Button> 
         </Section>
           <Text fontSize='smHeading' fontWeight='500' pb='6px' pt='36px'>Version 📄</Text>
             <Section color='Gray500'  pt='6px' pb='12px' >
@@ -89,7 +85,7 @@ const Intro = () => {
         <Text fontSize='smHeading' fontWeight='500'>Usage 👩‍💻</Text>
         <Section py='18px'><Code code={usage} lang='jsx' /></Section>
         <Text fontSize='smHeading' fontWeight='500' pt='0.75rem' pb='0.75rem'>Who Created? 🎓</Text>
-        <Text fontSize='regualar' pb='.5rem'>Hi, I am <Link color='Dark100' href=''>Siraj</Link>.</Text>
+        <Text fontSize='regualar' pb='.5rem'>Hi, I am <StyledLink color='Dark100' to='https://github.com/engsiraj'>Siraj</StyledLink>.</Text>
         <Text fontSize='text' color='Gray500'>Experienced React JS Developer with a deep understanding of the framework.  Skilled in developing complex user interfaces, integrating with back-end APIs, and optimizing performance for fast load times. Effective communicator with strong problem-solving skills, dedicated to delivering exceptional results and exceeding client expectations. Passionate about staying up-to-date with the latest trends in React and web development.</Text>
        </Section>
       </Wrapper>

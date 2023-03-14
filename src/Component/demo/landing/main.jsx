@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { VscGithub, VscGlobe, VscTwitter } from "react-icons/vsc";
+import { Link } from 'react-router-dom';
 import { typography, space, color, flexbox, layout, border } from 'studio-props-system'
 
 import Code from '../Code';
@@ -56,15 +57,21 @@ const Card = styled.div`
   ${space}
   ${color}
 `;
-const TextStyle = styled(Text)`
-  position: fixed;
-`
+const StyledLink = styled(Link)`
+  ${color}
+  cursor: pointer;
+  text-decoration: none;
+`;
 
+// const TextStyle = styled(Text)`
+//   position: fixed;
+// `
+/* <TextStyle py='6px' px='6px' backgroundColor='Dark500' fontSize='12px' fontWeight='600' color='Yellow200'>🚧 website under developement</TextStyle> */
 
 const Landingpage = () => {
   return (
     <>
-        <TextStyle py='6px' px='6px' backgroundColor='Dark500' fontSize='12px' fontWeight='600' color='Yellow200'>🚧 website under developement</TextStyle>
+
         <Wrapper  pt='3%' pb='3%'>
         <Header />
           <Design />
@@ -85,15 +92,15 @@ const Header = () => {
         <Card mt='18px' corner='.75rem'  p='20px' backgroundColor='Dark400'  width='49%'  border='1px solid rgba(100, 100, 100, 0.1);'>
            <Text fontSize='smHeading' fontWeight='600' pb='12px'>Studio - Props System</Text>
            <Text pb='18px' color='Gray600' >Reactjs props system is enhanced with styled-components, a unique approach for designing and developing user interfaces with styled-components.</Text>
-           <Button block sm default round>Get started</Button>
+           <Button block sm default round><StyledLink color='White' to='/intro'>Get started</StyledLink></Button>
         </Card>
 
         <Card mt='18px' corner='.75rem' p='20px' backgroundColor='Dark400'  width='49%'  border='1px solid rgba(100, 100, 100, 0.1);'>
           <Text  fontSize='smHeading' fontWeight='600' pb='12px'>Siraj <Button default circle>author</Button></Text>
-          <Text pb='18px' color='Gray600'>  Hi, i am siraj. a Front-end engineer and designs system developer</Text>
-          <Button default icon round><VscGithub /> </Button>
-          <Button mx='6px' default icon round ><VscTwitter/></Button>
-          <Button  default icon round ><VscGlobe /></Button>
+          <Text pb='18px' color='Gray600'>Front-end engineer and designs system developer experienced React JS Developer with a deep understanding of the framework.</Text>
+          <Button default icon round><StyledLink color='White' to='https://github.com/engsiraj'><VscGithub /> </StyledLink></Button>
+          <Button mx='6px' default icon round ><StyledLink color='White' to='https://twitter.com/engsiraj_'><VscTwitter/></StyledLink></Button>
+          <Button  default icon round ><StyledLink color='White' to='https://portfolio-2-0-hazel-one.vercel.app/'><VscGlobe /></StyledLink></Button>
         </Card>
       </Box>
 
@@ -224,7 +231,7 @@ const CCard = p => {
 const BCard = p => {
   return (
     <>
-    <Card  p='18px'   width='32%' mt='18px'>
+    <Card   width='32%' mt='18px'>
       <Text fontSize='regualar' fontWeight='600' pb='12px'  color='Gray400'>{p.title}</Text>
       <Text  color='Gray600'>{p.desc}</Text>
     </Card>
